@@ -1,9 +1,13 @@
 let numberN = parseInt(prompt('введіть число N'));
 let numberM = parseInt(prompt('введіть число M'));
+let trueOrFalse = confirm("true or false");
 let sayTrue = prompt('true or false');
+// let sayTrue = prompt('true or false');
 console.log(numberN);
 console.log(numberM);
+console.log(trueOrFalse);
 console.log(sayTrue);
+
 
 
 //якщо ввести не цифри, а інші
@@ -19,6 +23,17 @@ if ((isNaN(numberN) || isNaN(numberM)) === false) {
 
 let sumNM = 0;
 for (let i = numberN; i <= numberM; i++){
+   if (trueOrFalse) {
+      if (i % 2 === 0) {
+      continue;
+   }
+sumNM += i;
+   } else {
+      sumNM += i;
+}
+   }
+console.log(sumNM);
+for (let i = numberN; i <= numberM; i++){
    if (sayTrue === 'true') {
       if (i % 2 === 0) {
       continue;
@@ -29,6 +44,4 @@ sumNM += i;
 }
    }
 console.log(sumNM);
-
-
 
