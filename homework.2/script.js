@@ -6,7 +6,7 @@ console.log(numberM);
 console.log(sayTrue);
 
 let sumNM = 0;
-for (let i = numberN; i <= numberM; i++){1
+for (let i = numberN; i <= numberM; i++){
    if (sayTrue === 'true') {
       if (i % 2 === 0) {
       continue;
