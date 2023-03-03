@@ -47,6 +47,4 @@ console.log("сума до сплати зі знижкою за 3 товари:
 let netProfit = sumPriceFloor / 2 - (salePercent * sumPrice).toFixed(0);
 console.log("чистий прибуток з продажу 3х товарів:", netProfit);
 
-
 console.log(`максимальна вартість товару: ${maxPrice}  мінімальна вартість товару: ${minPrice}  чек на 3 товари: ${sumPrice}   сума без копійок: ${sumPriceForHundr} заокруглення сотень до більшого: ${sumPriceForHundr}  решта без заокруглень: ${clientMoney - sumPrice}   парне: ${pairOrNot(sumPriceFloor)}  середня ціна заокруглена до 2 знаку: ${mediumPrice} сума до сплати зі знижкою за 3 товари: ${discountPrice} чистий прибуток з продажу 3х товарів: ${netProfit}`);
-
