@@ -9,13 +9,13 @@ console.log(numberM);
 if ((isNaN(numberN) || isNaN(numberM)) === false) {
    if ((numberN % 1 === 0 && numberM % 1 === 0)) {
       console.log('Введено ціле число');
-    let sumNM = 0;
+   let sumNM = 0;
 
-    for (let i = +numberN; i <= +numberM; i++) {
+   for (let i = +numberN; i <= +numberM; i++) {
       if (trueOrFalse) {
-        if (i % 2 === 0) {
-          continue;
-        }
+      if (i % 2 === 0) {
+         continue;
+      }
       } 
       sumNM += i;
    }
