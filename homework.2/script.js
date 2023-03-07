@@ -20,6 +20,7 @@ if (!isNaN(numberN) && !isNaN(numberM)) {
    console.log(sumNM);
    document.writeln(`<h2>${sumNM}</h2>`);
    } else {
+      console.log('введено неціле число');
       for (let i = +Math.floor(+numberN); i <= +Math.floor(+numberM); i++) {
       if (trueOrFalse) {
       if (i % 2 === 0) {
@@ -28,7 +29,7 @@ if (!isNaN(numberN) && !isNaN(numberM)) {
       } 
       sumNM += i;
       }
-   console.log('неціле число');
+  
    document.writeln(`<h2>Введіть ціле число</h2>`);
    console.log(sumNM);
    document.writeln(`<h2>${sumNM}</h2>`);
@@ -36,4 +37,7 @@ if (!isNaN(numberN) && !isNaN(numberM)) {
 } else {
    alert('Памятай, ЧИСЛО, не РЯДОК!');
 }
+
+let b = parseInt('11,7088787')
+console.log(b);
 
