@@ -1,5 +1,4 @@
-
-//найбільше число 
+//найбільше число з будь якого введеного цілого числа
 function getMaxDigit(number) {
   let maxNum = 0;
   while (number > 0) {
@@ -12,6 +11,18 @@ function getMaxDigit(number) {
   }
   return maxNum;
 }
-// let y = +prompt()
-// let x = getMaxDigit(y);
-// alert(x);
+let y = +prompt()
+let x = getMaxDigit(y);
+console.log(x);
+
+
+// function for change the first letter on the name 
+function changeName(name) {
+   let leter = name.toLowerCase();
+   let littleLetter = leter.slice(1);
+   let firstLeter = name[0];
+   let bigLeter = firstLeter.toUpperCase();
+   return (bigLeter + littleLetter)
+}
+changeName('sErhii');
+console.log(changeName('sErHii'));
