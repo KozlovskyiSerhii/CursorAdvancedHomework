@@ -124,8 +124,16 @@ document.writeln(`<p title="найбільше число(1884214828412999)">Ф�
 //функція піднесення в степінь якогось числа
 function number(numeric, power) {
    let exp = 1;
-   for (let i = 0; i < power; i++){
+   if (power > 0) {
+      for (let i = 0; i < power; i++) {
+         exp *= numeric;
+      }
+      return exp;
+   } else if (power < 0) {
+
+      for (let i = 0; i < Math.abs(power); i++) {
       exp *= numeric;
+      }
+      return 1/exp;
    }
-   return exp;
 }
