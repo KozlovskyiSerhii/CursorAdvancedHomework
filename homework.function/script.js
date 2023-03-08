@@ -20,7 +20,9 @@ function changeName(name) {
    let bigLetter = firstLetter.toUpperCase();
    return (bigLetter + littleLetter)
 }
-
+//better then prev
+const goodName = (name) => name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase(); //perfect
+console.log(goodName('serHii'))
 
 //pure salary (4)
 
@@ -117,6 +119,13 @@ function palindromOrNot(palindrom) {
 }
    
 
-document.writeln(`<p>Функція No1: ${getMaxDigit(1884214828412999)}, Функція No2: ${changeName("sErHii")}, Функція No4: ${purSalary(29555, 27.4)}, Функція No5: ${intRandom(0, 600)}, Функція No6: ${countLetter('i have a dream haahahaha', 'h')}, Функція No7: ${getRandomPassword(7)}, Функція No8-9: ${exchangeMoney("100uah")}, Функція No10: ${delLetter("l", 'latex lettrel laret llluli')}, Функція No11: ${palindromOrNot('Уже лисі ліси Лежу')} </p>`)
+document.writeln(`<p title="найбільше число">Функція No1: ${getMaxDigit(1884214828412999)}</p><p title="піднесення числа X до степеня У"> Функція No2: ${number(2,10)}</p><p title="Зміна написання імені"> Функція No3: ${changeName("sErHii")}</p><p title="вираховує зарплату після сплати податків"> Функція No4: ${purSalary(29555, 27.4)}</p><p title="рандомне число в N до M"> Функція No5: ${intRandom(0, 600)}</p><p  title="рахує кількість заданих літер в словосполученні"> Функція No6: ${countLetter('i have a dream haahahaha', 'h')}</p><p title="випадковий числовий пароль на 8 символів, або на ту кількість яку задасть користувач"> Функція No7: ${getRandomPassword(7)}</p><p title="конвертація гривні в долар і навпаки, помилка при задаванні іншої валюти"> Функція No8-9: ${exchangeMoney("100uah")}</p><p title="видаляє задану букву із заданого словосполучення"> Функція No10: ${delLetter("l", 'latex lettrel laret llluli')}</p><p title="перевіряє чи є рядок паліндромом"> Функція No11: ${palindromOrNot('Уже лисі ліси Лежу')} </p>`)
 
-
+function number(numeric, power) {
+   let exp = 1;
+   for (let i = 0; i < power; i++){
+      exp *= numeric;
+   }
+   return exp;
+}
+console.log (number(100,10))
