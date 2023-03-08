@@ -78,3 +78,19 @@ function exchangeMoney(someMoney) {
    }
 }
 console.log(exchangeMoney("800000sdasf"))
+
+
+//видалення зазначених літер
+function delLetter(letter, words) {
+   let a = "";
+   let i = 0;
+   for (i; i < words.length; i++) {
+      let trueLetter = words[i]
+      if (trueLetter !== letter) {
+         a += trueLetter;
+      }
+   }
+   return a ;
+}
+let a = delLetter("l", 'latex lettrel laret llluli');
+   console.log(a);
