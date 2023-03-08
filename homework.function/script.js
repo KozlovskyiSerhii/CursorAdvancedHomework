@@ -130,10 +130,11 @@ function number(numeric, power) {
       }
       return exp;
    } else if (power < 0) {
-
       for (let i = 0; i < Math.abs(power); i++) {
       exp *= numeric;
       }
       return 1/exp;
+   } else if (power = 1) {
+      return exp;
    }
 }
