@@ -10,10 +10,6 @@ function getMaxDigit(number) {
   }
   return maxNum;
 }
-console.log(getMaxDigit(+prompt("введіть набір чисел")));
-
-
-
 
 
 // function for change the first letter on the name (3)
@@ -24,10 +20,6 @@ function changeName(name) {
    let bigLetter = firstLetter.toUpperCase();
    return (bigLetter + littleLetter)
 }
-changeName('sErhii');
-console.log(changeName(prompt("введіть набір ім'я")));
-
-
 
 
 //pure salary (4)
@@ -36,10 +28,10 @@ function pureSalary(salary, taxes) {
   let salaryWithoutTaxes = salary - salary * (taxes / 100);
    return salaryWithoutTaxes;
 }
-console.log(pureSalary(29555, 27.4));
+
 //те саме ....стрілочна.
 const purSalary = (salary, taxes) => salary - salary * (taxes / 100)
-console.log(purSalary(29555, 27.4));
+
 
 
 
@@ -47,10 +39,9 @@ console.log(purSalary(29555, 27.4));
 function numRandom(N, M) {
    return (Math.round(Math.random()*(M-N))+N)
 }
-console.log(numRandom(0, 1000))
 
 const intRandom = (N, M) => Math.round(Math.random() * (M - N)) + N;
-console.log(intRandom(0, 600))
+
 
 //count letters (6)
 function countLetter(word, letter) {
@@ -63,7 +54,7 @@ function countLetter(word, letter) {
    }
    return countLet;
 }
-console.log(countLetter('i have a dream haahahaha', 'h'));
+
 
 /*Створіть функцію генерації випадкового паролю (тільки числа),
 довжина встановлюється користувачем або по замовчуванню = 8 *///(9)
@@ -73,7 +64,7 @@ console.log(countLetter('i have a dream haahahaha', 'h'));
 console.log(getRandomPassword(7)) */
 
 const getRandomPassword = (n = 8) => Math.floor(Math.random() * Math.pow(10, n)); //стрілочна функція
-console.log(getRandomPassword(7))
+
 
 //Створіть функцію, яка конвертує долари в гривні та навпаки(7-8)
 function exchangeMoney(someMoney) {
@@ -89,7 +80,6 @@ function exchangeMoney(someMoney) {
       return alert('невідома валюта');
    }
 }
-console.log(exchangeMoney(prompt('введіть потріну суму в  $ чи  UAH , іншу валюту не конвертуємо')))
 
 
 //видалення зазначених літер(10)
@@ -104,8 +94,7 @@ function delLetter(letter, words) {
    }
    return a ;
 }
-let a = delLetter("l", 'latex lettrel laret llluli');
-console.log(a);
+
    
 
 //palindrom(11)
@@ -126,8 +115,8 @@ function palindromOrNot(palindrom) {
       return false;
    }
 }
-console.log(palindromOrNot('Уже лисі ліси Лежу'));
    
 
+document.writeln(`<p>Функція No1: ${getMaxDigit(1884214828412999)}, Функція No2: ${changeName("sErHii")}, Функція No4: ${purSalary(29555, 27.4)}, Функція No5: ${intRandom(0, 600)}, Функція No6: ${countLetter('i have a dream haahahaha', 'h')}, Функція No7: ${getRandomPassword(7)}, Функція No8-9: ${exchangeMoney("100uah")}, Функція No10: ${delLetter("l", 'latex lettrel laret llluli')}, Функція No11: ${palindromOrNot('Уже лисі ліси Лежу')} </p>`)
 
 
