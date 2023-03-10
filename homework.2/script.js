@@ -2,10 +2,10 @@ let numberN= +prompt('Введіть перше ціле число');
 let numberM = +prompt('Введіть друге ціле число');
 let sumNM = 0;
 
-while ( !Number.isInteger(numberN) || numberN <= 0) {
+while ( !Number.isInteger(numberN)) {
    numberN = parseInt(prompt('enter first number'));
 };
-while (!Number.isInteger(numberM) || numberM <= 0) {
+while (!Number.isInteger(numberM)) {
    numberM = parseInt(prompt('enter  second number'))
 };
 
@@ -17,9 +17,11 @@ if (numberN > numberM) {
 let trueOrFalse = confirm("пропускаємо парні чи ні?");
    
    for (let i = parseInt(numberN); i <= parseInt(numberM); i++) {
-      if (!trueOrFalse) {   
+      if (!trueOrFalse) { 
+          console.log(sumNM)
             sumNM += i;     
       } else if (i % 2 !== 0) {
+         console.log(sumNM)
          sumNM += i;
       }
    }
