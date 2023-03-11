@@ -18,10 +18,10 @@ let trueOrFalse = confirm("пропускаємо парні чи ні?");
    
    for (let i = parseInt(numberN); i <= parseInt(numberM); i++) {
       if (!trueOrFalse) { 
-          console.log(sumNM)
+         //  console.log(sumNM)
             sumNM += i;     
       } else if (i % 2 !== 0) {
-         console.log(sumNM)
+         // console.log(sumNM)
          sumNM += i;
       }
    }
