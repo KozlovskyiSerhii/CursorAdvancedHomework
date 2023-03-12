@@ -21,8 +21,7 @@ const pairGB = (people) => {    //РОБИМО МАТРИЦЮ З ПАРАМИ С
    pairGAndB.push([people[4], people[5]]);
    return pairGAndB;
 }
-console.log(pairGB(students));
-document.writeln(`<h2>Пари студентів:</br> ${pairGB(students).join("</br>")}</h2>`);
+
 
 const topicForPair = (pairGB, topic) => {   //теми для пар, пари через і
    const topicForPairs = [];
@@ -46,7 +45,7 @@ const topicForPair = (pairGB, topic) => {   //теми для пар, пари �
 //    return writsStud.join("<br>");
 // }
 
-document.writeln(`<h2>Пари студентів та їхня тема:</br> ${topicForPair(pairGB(students), themes).join("</br>")}</h2>`);
+
 
 const studentMark = (people, mark) => {    //РОБИМО МАТРИЦЮ З ПАРАМИ СТУДЕНТІВ 
    const studentsMark = [];
@@ -57,8 +56,8 @@ const studentMark = (people, mark) => {    //РОБИМО МАТРИЦЮ З ПА
    return studentsMark;
 }
 // randomWord = randomWords*(Math.floor(Math.random()*X(кількість потрібних чисел)))
-console.log(studentMark(students, marks))
-document.writeln(`<p>оцінки студентів:</p> </br> <p>${studentMark(students, marks).join("</br>")}</p>`);
+
+
 
 
 const randomMarkForPair = (topicForPair) => { 
@@ -69,4 +68,12 @@ for (let i = 0; i < randomMarkForPairs.length; i++) {
 }
    return randomMarkForPairs;
 }
-document.writeln(`<p>оцінки пар студентів  :</p> </br> <p>${randomMarkForPair(topicForPair(pairGB(students), themes)).join("</br>")}</p>`);
+const x = pairGB(students);
+const y = topicForPair(x, themes);
+const z = studentMark(students, marks);
+const h = randomMarkForPair(y);
+
+document.writeln(`<h2>Пари студентів:</br> ${x.join("</br>")}</h2>`);
+document.writeln(`<h2>Пари студентів та їхня тема:</br> ${topicForPair(x, themes).join("</br>")}</h2>`);
+document.writeln(`<p>оцінки студентів:</p> </br> <p>${studentMark(students, marks).join("</br>")}</p>`);
+document.writeln(`<p>оцінки пар студентів  :</p> </br> <p>${h.join("</br>")}</p>`);
