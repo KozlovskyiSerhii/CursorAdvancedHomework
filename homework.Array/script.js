@@ -67,7 +67,7 @@ const topicForPair = (pairGB, topic) => {   //теми для пар, пари �
 //    return writsStud.join("<br>");
 // }
 
-document.writeln(`<h2>Пари студентів та їхня тема:</br> ${topicForPair(pairGB(students), themes)}</h2>`);
+document.writeln(`<h2>Пари студентів та їхня тема:</br> ${topicForPair(pairGB(students), themes).join("</br>")}</h2>`);
 
 const studentMark = (people, mark) => {    //РОБИМО МАТРИЦЮ З ПАРАМИ СТУДЕНТІВ 
    const studentsMark = [];
