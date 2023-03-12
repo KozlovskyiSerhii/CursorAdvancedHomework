@@ -2,11 +2,11 @@ let numberN= +prompt('Введіть перше ціле число');
 let numberM = +prompt('Введіть друге ціле число');
 let sumNM = 0;
 
-while ( !Number.isInteger(numberN)) {
-   numberN = parseInt(prompt('enter first number'));
+while ( !Number.isInteger(+numberN) || +numberN <= 0) {
+   numberN = Math.floor(+prompt('enter  first number'))
 };
-while (!Number.isInteger(numberM)) {
-   numberM = parseInt(prompt('enter  second number'))
+while (!Number.isInteger(numberM) || +numberM <= 0) {
+   numberM = Math.floor(+prompt('enter  second number'))
 };
 
 if (numberN > numberM) {
