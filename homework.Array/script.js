@@ -64,7 +64,7 @@ const randomMarkForPair = (topicForPair) => {
 const randomMarkForPairs = [...topicForPair] ;
 for (let i = 0; i < randomMarkForPairs.length; i++) {
   let s = Math.floor(Math.random() * 3);
-   randomMarkForPairs[i].push(Math.floor(Math.random() * 3));
+   randomMarkForPairs[i].push(Math.floor(Math.random() * 5 + 1));
 }
    return randomMarkForPairs;
 }
