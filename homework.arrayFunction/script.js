@@ -46,6 +46,23 @@ function getMedian(array) {
 }
 console.log(getMedian(number));
 
+// виводить масив випадкових чисел із заданою кількістю елементів, та гранрицями мін і макс значення
+function getRandomArray(length, min, max){
+	const getRandomArrays = [];
+	let x = max;
+	max = min;  // якщо мінімальне і максимальне введено не вірно, поміняє мін і макс
+	min = x
+	for (let i = 0; i < length; i++){
+		let randNumb = (Math.round(Math.random() * (max - min)) + min);
+	getRandomArrays.push(randNumb);
+	}
+	return getRandomArrays.sort((a, b) => a - b);
+};
+console.log(getRandomArray(40, 2000, 5));
+
+
+
+
 
 
 
