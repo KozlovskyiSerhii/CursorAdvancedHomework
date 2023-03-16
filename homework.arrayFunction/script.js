@@ -1,6 +1,6 @@
 const getDividedByFives = [6, 2, 55, 11.1, 78, 2, 55.1, 77, 57, 87, 23, 2, 56, 25 , 45, 5, 85, 95, 5, 35, 25, 20, 40, 50, 100, 3, 2, 43, 34, 36, 86, 89, 23, 12, 15, 10, 1, 44, 46
 ];
-const number = [0.1, 1, 2, 4, 17, 11, 9, 2.2, 1.4, 98, 76, 20, 24.5, 13.4, 3, 11, 6, 8, 16, 191];
+const number = [0.1, 1, 2, 4, 17, 11, 9, 2.2, 1.4, 98, 76, 20, 24.5, 13.4, 3, 11, 6, 8, 16, 191, 3, 5, 13, 15, 17, 19, 91, 93, 95, 97, 99, 101, 113, 115];
 	
 
 
@@ -82,7 +82,7 @@ console.log(countPositiveNumbers(numberMin));
 
 
 function generateCombinations(string) {
-   if (string <= 10) {
+   if (string.length <= 10) {
       if (string.length === 1) {
          return [string];
       }
@@ -102,7 +102,7 @@ function generateCombinations(string) {
    return alert('слово занадто довге для комбінування ')
 }
 }
-console.log(generateCombinations('aaadвввіввлфілдфіьсфі'));
+console.log(generateCombinations('Lviv'));
 
 //заміна емоційної лексики на зірочки
 let x = 'fucking ngbictfuck sucking fucking hstufuckyourself vpidisd idiots russian pidarashn '
