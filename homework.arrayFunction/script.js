@@ -102,7 +102,7 @@ function generateCombinations(string) {
    return alert('слово занадто довге для комбінування ')
 }
 }
-console.log(generateCombinations('aaadвввіввлфілдфіьсдьіфдсьфідьсфіьсдфіьсщфі'));
+console.log(generateCombinations('aaadвввіввлфілдфіьсфі'));
 
 //заміна емоційної лексики на зірочки
 let x = 'fucking ngbictfuck sucking fucking hstufuckyourself vpidisd idiots russian pidarashn '
@@ -119,4 +119,10 @@ function changeWord(string) {
 }
 
 console.log(changeWord(x))
-
+//виведення непарних цілих чисел
+function filterEvenNumbers(array) {
+   const evenNumb = array.filter((item, index) => Number.isInteger(item) && item % 2 !== 0);
+   // const evenNumb = integer.filter((item) => item % 2 !== 0)
+   return evenNumb;
+}
+console.log(filterEvenNumbers(number));
