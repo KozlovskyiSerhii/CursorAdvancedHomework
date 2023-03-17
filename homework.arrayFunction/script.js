@@ -23,7 +23,7 @@ function getDividedByFiveFilter(array) {
 }
 
 
-console.log('функція виводить числа кратні 5 :', getDividedByFiveFilter(getDividedByFives));
+console.log(`функція виводить числа кратні 5 :` + getDividedByFiveFilter(getDividedByFives).join('; ') +  "\n\n");
 // console.log(getDividedByFive(getDividedByFives)); //інший варіант
 	
 
@@ -34,7 +34,7 @@ function getAverage(array) {
 	const sumInt = int.reduce((prevValue, item) => prevValue + item, 0);
    return (sumInt / int.length).toFixed(3);
 }
-console.log('рахує середнє арифметичне : ', getAverage(number));
+console.log('рахує середнє арифметичне : ', getAverage(number), "\n\n");
 
 
 
@@ -54,7 +54,7 @@ function getMedian(array) {
 		return intSort[Math.floor(a / 2)];
 	}
 }
-console.log('рахує медіану :', getMedian(number));
+console.log('рахує медіану :', getMedian(number), "\n\n");
 
 
 // виводить масив випадкових чисел із заданою кількістю елементів, та гранрицями мін і макс значення
@@ -70,7 +70,7 @@ function getRandomArray(length, min, max){
 	}
 	return getRandomArrays.sort((a, b) => a - b);
 };
-console.log('виводить масив випадкових чисел із заданою кількістю елементів, та гранрицями мін і макс значення:', getRandomArray(40, 2000, 5));
+console.log('виводить масив випадкових чисел із заданою кількістю елементів, та гранрицями мін і макс значення:', getRandomArray(40, 2000, 5).join('; '), "\n\n");
 
 
 
@@ -80,7 +80,7 @@ const numberMin = [-1, -4, 5, 6, 7, 0, -8, 9, -2];
 	const int = array.filter((item) => item > 0);
 	return int.length;
 };
-console.log('рахує кількість чисел більших від нуля в масиві :', countPositiveNumbers(numberMin));
+console.log('рахує кількість чисел більших від нуля в масиві :', countPositiveNumbers(numberMin), "\n\n");
 
 
 //генерує купу слів
@@ -103,10 +103,10 @@ if (string.length <= 10) {
       }
       return result;
    }  else {
-   return alert('слово занадто довге для комбінування ')
+   return console.log('слово занадто довге для комбінування ');
 }
 }
-console.log('генерує купу слів : ', generateCombinations('Lviv'));
+console.log('генерує купу слів : ', generateCombinations('Lviv').join('; '), "\n\n");
 
 //заміна емоційної лексики на зірочки
 let x = 'Are fucking dearfuck sucking fucking FreeFuckyourself RiverFuck idiots russian pidarashn '
@@ -122,14 +122,14 @@ function changeWord(string) {x
   return stringWithoutBadWords;
 }
 
-console.log('заміна емоційної лексики на зірочки :', changeWord(x))
+console.log('заміна емоційної лексики на зірочки :', changeWord(x), "\n\n")
 //виведення непарних цілих чисел
 function filterEvenNumbers(array) {
    const evenNumb = array.filter((item, index) => Number.isInteger(item) && item % 2 !== 0);
    // const evenNumb = integer.filter((item) => item % 2 !== 0)
    return evenNumb;
 }
-console.log('виведення непарних цілих чисел :', filterEvenNumbers(number));
+console.log('виведення непарних цілих чисел :', filterEvenNumbers(number).join('; '), "\n\n");
 
 
 
