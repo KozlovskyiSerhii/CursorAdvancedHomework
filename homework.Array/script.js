@@ -76,3 +76,31 @@ document.writeln(`<h2>Пари студентів:</br> ${x.join("</br>")}</h2>`
 document.writeln(`<h2>Пари студентів та їхня тема:</br> ${topicForPair(x, themes).join("</br>")}</h2>`);
 document.writeln(`<p>оцінки студентів:</p> </br> <p>${studentMark(students, marks).join("</br>")}</p>`);
 document.writeln(`<p>оцінки пар студентів  :</p> </br> <p>${h.join("</br>")}</p>`);
+
+//сортування хлопців та дівчат і роподіл їх на пари
+
+const newArray = ['Аня', 'Катя', 'Олена', 'Ганна', 'Просковія', 'Параска', 'Іван', 'Сергій', 'Андрій', 'Ігор', 'Петро', 'Алла']
+function sortBoyGirl(array) {
+   const boy = [];
+   const girl = [];
+   for (let i = 0; i < array.length; i++){
+   if (array[i].slice(-1) === 'а' || array[i].slice(-1) === 'я') {
+      girl.push(array[i]);
+   } else {
+      boy.push(array[i]);
+   }
+   }
+      return  newAr = [boy, girl]
+}
+const t = sortBoyGirl(newArray)
+
+
+function shakeGirlBoy(array) {
+   const shakeGB = []
+for (let i = 0; i < array[0].length; i++){
+      shakeGB.push([array[0][i], array[1][i]].join(" і "))
+      }
+   return shakeGB;
+
+}
+console.log(shakeGirlBoy(t));

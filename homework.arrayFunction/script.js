@@ -18,32 +18,34 @@ function getDividedByFive(array){
 
 //функція виводить числа кратні 5
 function getDividedByFiveFilter(array) {
-	const int = array.filter((item, index, arr) => item % 5 === 0);
+	const int = array.filter((item) => item % 5 === 0);
 	return int;
 }
-console.log(getDividedByFiveFilter(getDividedByFives));
-console.log(getDividedByFive(getDividedByFives));
+
+
+console.log('функція виводить числа кратні 5 :', getDividedByFiveFilter(getDividedByFives));
+// console.log(getDividedByFive(getDividedByFives)); //інший варіант
 	
 
-	// сумує всі числа
-function result(array) {
+	//рахує середнє арифметичне
+
+function getAverage(array) {
 	const int = array.filter((item, index) => Number.isInteger(item));
-	console.log(int);
 	const sumInt = int.reduce((prevValue, item) => prevValue + item, 0);
-	console.log(sumInt)
-  return sumInt / int.length;
+   return (sumInt / int.length).toFixed(3);
 }
-console.log(result(number));
+console.log('рахує середнє арифметичне : ', getAverage(number));
 
 
 
 //рахує медіану
+
 function getMedian(array) {
 	const int = array.filter((item, index) => Number.isInteger(item));
 	const intSort = int.sort((a, b) => a - b);
-	console.log(intSort)
+	// console.log(intSort)
 	const a = int.length;
-	console.log('a', a)
+	// console.log('a', a)
 	if (a % 2 === 0) {
 		// console.log('intSort[a/2]', intSort[a/2])
 		// console.log('intSort[a/2 + 1]', intSort[a/2 + 1])
@@ -52,22 +54,23 @@ function getMedian(array) {
 		return intSort[Math.floor(a / 2)];
 	}
 }
-console.log(getMedian(number));
+console.log('рахує медіану :', getMedian(number));
 
 
 // виводить масив випадкових чисел із заданою кількістю елементів, та гранрицями мін і макс значення
+
 function getRandomArray(length, min, max){
 	const getRandomArrays = [];
-	let x = max;
+	let temp = max;
 	max = min;  // якщо мінімальне і максимальне введено не вірно, поміняє мін і макс
-	min = x
+	min = temp
 	for (let i = 0; i < length; i++){
 		let randNumb = (Math.round(Math.random() * (max - min)) + min);
-	getRandomArrays.push(randNumb);
+	   getRandomArrays.push(randNumb);
 	}
 	return getRandomArrays.sort((a, b) => a - b);
 };
-console.log(getRandomArray(40, 2000, 5));
+console.log('виводить масив випадкових чисел із заданою кількістю елементів, та гранрицями мін і макс значення:', getRandomArray(40, 2000, 5));
 
 
 
@@ -77,12 +80,13 @@ const numberMin = [-1, -4, 5, 6, 7, 0, -8, 9, -2];
 	const int = array.filter((item) => item > 0);
 	return int.length;
 };
-console.log(countPositiveNumbers(numberMin));
+console.log('рахує кількість чисел більших від нуля в масиві :', countPositiveNumbers(numberMin));
 
 
+//генерує купу слів
 
 function generateCombinations(string) {
-   if (string.length <= 10) {
+if (string.length <= 10) {
       if (string.length === 1) {
          return [string];
       }
@@ -102,13 +106,13 @@ function generateCombinations(string) {
    return alert('слово занадто довге для комбінування ')
 }
 }
-console.log(generateCombinations('Lviv'));
+console.log('генерує купу слів : ', generateCombinations('Lviv'));
 
 //заміна емоційної лексики на зірочки
-let x = 'fucking ngbictfuck sucking fucking hstufuckyourself vpidisd idiots russian pidarashn '
+let x = 'Are fucking dearfuck sucking fucking FreeFuckyourself RiverFuck idiots russian pidarashn '
 
-function changeWord(string) {
-  const badWord = ["fuck", "shit", "suck", "idiot", "russian", "pidar"];
+function changeWord(string) {x
+  const badWord = ["fuck", "Fuck", "shit", "Shit", "suck", "idiot", "russian", "pidar"];
   let stringWithoutBadWords = string;
   for (let i = 0; i < badWord.length; i++) {
      const splitString = stringWithoutBadWords.split(badWord[i]);
@@ -118,11 +122,16 @@ function changeWord(string) {
   return stringWithoutBadWords;
 }
 
-console.log(changeWord(x))
+console.log('заміна емоційної лексики на зірочки :', changeWord(x))
 //виведення непарних цілих чисел
 function filterEvenNumbers(array) {
    const evenNumb = array.filter((item, index) => Number.isInteger(item) && item % 2 !== 0);
    // const evenNumb = integer.filter((item) => item % 2 !== 0)
    return evenNumb;
 }
-console.log(filterEvenNumbers(number));
+console.log('виведення непарних цілих чисел :', filterEvenNumbers(number));
+
+
+
+
+
