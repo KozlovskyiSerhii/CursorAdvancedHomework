@@ -62,7 +62,7 @@ console.log('Інформація про студента і середня ус
       return studentNames.sort();
    };
 
-console.log('список студентів в алфавітному порядку ', getStudentsNames(students), '\n\n');
+console.log('список студентів в алфавітному порядку ', getStudentsNames(students).join(', '), '\n\n');
 
 //вивід найкращого студента на основі середньої оцінки по всіх предметах
 function getBestStudent(students) {
@@ -95,3 +95,4 @@ function calculateWordLetters(word) {
   return letters;
 }
 console.log(calculateWordLetters('test or not or yes or not'));
+
