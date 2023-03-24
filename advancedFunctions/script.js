@@ -19,3 +19,12 @@ function getTotalTaxes() {
 }
 console.log(getTotalTaxes.call(ukraine));
 
+function getMySalary() {
+   const salary = Math.round(Math.random() * (2000 - 1500) + 1500);
+   const taxes = +(this.tax * salary).toFixed(2);
+   const profit = salary - taxes
+   return { salary, taxes, profit };
+}
+setInterval(() => {
+   console.log(getMySalary.call(ukraine));
+}, 10000);
