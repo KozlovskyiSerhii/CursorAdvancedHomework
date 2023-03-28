@@ -149,3 +149,45 @@ let curriedSum = curry(sum);
 // alert( curriedSum(1, 2, 3) ); // 6, все ще можна викликати нормально
 // alert( curriedSum(1)(2,3) ); // 6, каррінг першого аргументу
 // alert(curriedSum(1)(2)(3)); // 6, повний каррінг
+
+
+
+class Client { // обєкт
+   #permission
+            Інкапсуляція
+   
+
+   constructor(name, years_old, married_status, travelling_status) {
+      this.count = 0;
+      this.name = name;
+      this.years = years_old;
+      this.married = married_status;
+      this.travelling = travelling_status;
+      this.#permission = 'guest'
+   }
+   show_info() {
+      this.count++;
+      console.log(`${this.name} who is ${this.years} old whose married status is ${this.married} who travelling status is ${this.travelling}`); // метод
+   }
+   set change_permission(value){
+      if (value == 'guest' || value == 'unauthorized user') {
+         this.#permission = value;
+         console.log('successfully changed!');
+      } else {
+         console.log('error');
+   }
+   }
+   get change_permission(){
+      console.log('warning');
+      return this.#permission;
+   }
+}
+
+
+let client = new Client('Mark', 26, true, false);
+client.show_info()
+client.change_permission = 'guest'
+// client.change_name()
+console.log(client.name)
+
+
