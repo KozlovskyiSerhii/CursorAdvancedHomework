@@ -24,10 +24,12 @@ class Student {
 
    dismissed() {
       this.dismiss = true;
+      console.log('студента виключили')
    }
 
    recover(){ //відновить щасливого студента
       this.dismiss = false;
+      console.log('студента поновили')
    }
 
 
