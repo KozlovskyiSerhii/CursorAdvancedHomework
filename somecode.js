@@ -45,3 +45,107 @@ console.log(calc());
 //    for (let j = 0; j < pairGB()[i].length; j++)
 //       console.log(pairGB()[i][j])
 // }
+const ladder = {
+maxSteps: 20,
+  currentStep: 0,
+
+  up: function () {
+    if (this.currentStep >= this.maxSteps) {
+      console.warn(
+        "You achieved max steps for current ladder, you can't go up"
+      );
+
+      return this;
+    }
+
+    this.currentStep = this.currentStep + 1;
+
+    return this;
+  },
+
+  down: function () {
+    if (this.currentStep <= 0) {
+      return this;
+    }
+
+    this.currentStep = this.currentStep - 1;
+
+    return this;
+  },
+
+  info: function () {
+    console.info("current step is: ", this.currentStep);
+
+    return this;
+  },
+};
+function generateBlocks() {
+  const container = document.createElement("div");
+  container.style.display = "flex";
+  container.style.flexWrap = "wrap";
+  container.style.width = "250px";
+  for (let i = 0; i < 25; i++) {
+    const block = document.createElement("div");
+    block.style.width = "50px";
+    block.style.height = "50px";
+    block.style.backgroundColor = getRandomColor();
+    container.appendChild(block);
+  }
+  document.body.appendChild(container);
+}
+
+function getRandomColor() {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+function generateBlocksInterval() {
+  generateBlocks();
+  setInterval(() => {
+    const blocks = document.querySelectorAll("div > div");
+    blocks.forEach(block => {
+      block.style.backgroundColor = getRandomColor();
+    });
+  }, 1000);
+}
+generateBlocks();
+getRandomColor();
+generateBlocksInterval();
+//let n = +prompt("input numder")
+
+function factorial(n) {
+   let result = 1;
+   for (let i = 1; i <= n; i++){
+      result *= i
+   }
+   return result;
+}
+// console.log(factorial(n));
+
+function curry(func) {
+
+  return function curried(...args) {
+    if (args.length >= func.length) {
+      return func.apply(this, args);
+    } else {
+      return function(...args2) {
+        return curried.apply(this, args.concat(args2));
+      }
+    }
+  };
+
+}
+
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+let curriedSum = curry(sum);
+
+// alert( curriedSum(1, 2, 3) ); // 6, все ще можна викликати нормально
+// alert( curriedSum(1)(2,3) ); // 6, каррінг першого аргументу
+// alert(curriedSum(1)(2)(3)); // 6, повний каррінг
