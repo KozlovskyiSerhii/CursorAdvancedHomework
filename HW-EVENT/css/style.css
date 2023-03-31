@@ -1,5 +1,8 @@
 html, body {
+   min-width: 1440px;
    font-family: Arial, Helvetica, sans-serif;
+   background-image: url('./sounds.webp');
+   background-position: 0% 50%;
 }
 
 
@@ -15,13 +18,14 @@ html, body {
    gap: 1rem;
 }
 .key {
-   background-color: rgba(18, 183, 201, 0.234);
+   color: chartreuse;
+   background-color: rgba(18, 183, 201, 0.082);
    width: 100px;
    height: 100px;
    display: flex;
    flex-direction: column;
    align-items: center;
-   border: 2px solid black;
+   border: 2px solid rgba(2, 78, 18, 0.537);
    text-shadow: 0 0 0.5rem;
    font-size: 1.7rem;
    border-radius: 5px;
@@ -30,10 +34,10 @@ html, body {
 
 }
 .some-sound {
-      font-size: 1.2rem;
+      font-size: 0.6rem;
       text-transform: uppercase;
       letter-spacing: .1rem;
-      color: #3a12bc;
+      color: #d5eb0d;
 }
 /* .play {
       transform: scale(1.1);
