@@ -34,13 +34,13 @@ html, body {
 
 }
 .some-sound {
-      font-size: 0.6rem;
-      text-transform: uppercase;
+      font-size: 0.8rem;
       letter-spacing: .1rem;
       color: #d5eb0d;
 }
 .play {
-      transform: scale(1.1);
-      border-color: #1c0675;
-      box-shadow: 0 0 1rem #09aa3c6a;
+      transform: scale(1.2);
+      border-color: #fcf802;
+      text-transform: uppercase;
+      box-shadow: 0 0 2rem #29c50ac5;
 }

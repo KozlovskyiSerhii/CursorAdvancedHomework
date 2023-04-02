@@ -10,18 +10,27 @@ let tone = {
   'KeyL': 'audio/L.wav',
 };
 
+let lastKeyCode = null;
+
 document.addEventListener('keydown', function(event) {
   let code = event.code;
   let audioSrc = tone[code];
   let audio = new Audio(audioSrc);
 
-  let keyDiv = document.getElementById(code.charCodeAt(3));
-  keyDiv.classList.add('play');
-  audio.play();
-
-  document.addEventListener('keyup', function(event) {
-    let code = event.code;
+  if (lastKeyCode === null || event.repeat || code === lastKeyCode) {
     let keyDiv = document.getElementById(code.charCodeAt(3));
-    keyDiv.classList.remove('play');
-  });
+    keyDiv.classList.add('play');
+    audio.play();
+    lastKeyCode = code;
+  }
+});
+
+document.addEventListener('keyup', function(event) {
+  let code = event.code;
+  let keyDiv = document.getElementById(code.charCodeAt(3));
+  keyDiv.classList.remove('play');
+
+  if (code === lastKeyCode) {
+    lastKeyCode = null;
+  }
 });
