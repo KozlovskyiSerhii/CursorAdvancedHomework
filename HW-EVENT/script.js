@@ -10,27 +10,41 @@ let tone = {
   'KeyL': 'audio/L.wav',
 };
 
-let lastKeyCode = null;
+let lastKey = null;
+
+document.querySelectorAll('.key').forEach(key => {
+  key.addEventListener('mousedown', function(event) {
+    if (lastKey !== null) {
+      lastKey.classList.remove('play');
+    }
+    key.classList.add('play');
+    let audioSrc = key.querySelector('audio').src;
+    let audio = new Audio(audioSrc);
+    audio.play();
+    lastKey = key;
+  });
+});
 
 document.addEventListener('keydown', function(event) {
   let code = event.code;
-  let audioSrc = tone[code];
-  let audio = new Audio(audioSrc);
-
-  if (lastKeyCode === null || event.repeat || code === lastKeyCode) {
-    let keyDiv = document.getElementById(code.charCodeAt(3));
-    keyDiv.classList.add('play');
+  let key = document.getElementById(code.charCodeAt(3));
+  if (key !== null) {
+    if (lastKey !== null) {
+      lastKey.classList.remove('play');
+    }
+    key.classList.add('play');
+    let audioSrc = key.querySelector('audio').src;
+    let audio = new Audio(audioSrc);
     audio.play();
-    lastKeyCode = code;
+    lastKey = key;
   }
 });
 
 document.addEventListener('keyup', function(event) {
   let code = event.code;
-  let keyDiv = document.getElementById(code.charCodeAt(3));
-  keyDiv.classList.remove('play');
-
-  if (code === lastKeyCode) {
-    lastKeyCode = null;
+  let key = document.getElementById(code.charCodeAt(3));
+  if (key !== null && key === lastKey) {
+    key.classList.remove('play');
+    lastKey = null;
   }
 });
