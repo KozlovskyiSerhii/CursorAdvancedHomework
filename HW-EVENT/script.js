@@ -1,4 +1,4 @@
-let tone = {
+const  tone = {
   'KeyA': 'audio/A.wav',
   'KeyS': 'audio/S.wav',
   'KeyD': 'audio/D.wav',
