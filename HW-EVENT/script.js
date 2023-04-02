@@ -29,7 +29,7 @@ document.addEventListener('keydown', function(event) {
   let code = event.code;
   let key = document.getElementById(code.charCodeAt(3));
   if (key !== null) {
-    if (lastKey !== null) {
+    if (lastKey !== null && lastKey !== key) {
       lastKey.classList.remove('play');
     }
     key.classList.add('play');
@@ -43,7 +43,7 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keyup', function(event) {
   let code = event.code;
   let key = document.getElementById(code.charCodeAt(3));
-  if (key !== null && key === lastKey) {
+  if (key !== null && lastKey === key) {
     key.classList.remove('play');
     lastKey = null;
   }
