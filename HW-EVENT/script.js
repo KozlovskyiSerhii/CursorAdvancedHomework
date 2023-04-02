@@ -43,7 +43,7 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keyup', function(event) {
   let code = event.code;
   let key = document.getElementById(code.charCodeAt(3));
-  if (key !== null && lastKey === key) {
+  if (key !== null && key !== lastKey) {
     key.classList.remove('play');
     lastKey = null;
   }
