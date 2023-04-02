@@ -17,7 +17,7 @@ function generateBlocks() {
 function getRandomColor() {
   const partOfHex = "0123456789ABCDEF";
   let color = "#";
-  for (let i = 0; i < 8; i++) {   //i<6 для кольору без прозорості
+  for (let i = 0; i < 6; i++) {   //i<6 для кольору без прозорості
     color += partOfHex[Math.floor(Math.random() * 16)];
   }
   return color;

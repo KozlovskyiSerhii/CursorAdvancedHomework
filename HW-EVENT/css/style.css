@@ -39,8 +39,8 @@ html, body {
       letter-spacing: .1rem;
       color: #d5eb0d;
 }
-/* .play {
+.play {
       transform: scale(1.1);
       border-color: #1c0675;
       box-shadow: 0 0 1rem #09aa3c6a;
-} */
+}
