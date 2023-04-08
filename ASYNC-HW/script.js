@@ -9,6 +9,7 @@ async function getRandomChinese(length) {
   }
   return chars.join('');
 }
+
 async function tryFunc() {
    console.log(await getRandomChinese(4));
    console.log(await getRandomChinese(5));
