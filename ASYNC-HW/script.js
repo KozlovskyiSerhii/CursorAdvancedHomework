@@ -12,8 +12,7 @@ async function getRandomChinese(length) {
 
 async function tryFunc() {
    console.log(await getRandomChinese(4));
-   console.log(await getRandomChinese(5));
-   console.log(await getRandomChinese(8));
+   document.writeln(`<p>${await getRandomChinese(4)}</p>`);
 }
 
 tryFunc();
