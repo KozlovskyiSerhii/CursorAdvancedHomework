@@ -1,0 +1,23 @@
+{
+  "name": "cursoradvancedhomework",
+  "version": "1.0.0",
+  "description": "its homework from study js",
+  "main": "somecode.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KozlovskyiSerhii/KozlovskyiSerhii-CursorAdvancedHomework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KozlovskyiSerhii/KozlovskyiSerhii-CursorAdvancedHomework/issues"
+  },
+  "homepage": "https://github.com/KozlovskyiSerhii/KozlovskyiSerhii-CursorAdvancedHomework#readme",
+  "keywords": [],
+  "dependencies": {
+    "webpack": "^5.79.0"
+  }
+}
