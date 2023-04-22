@@ -1,5 +1,5 @@
 {
-  "name": "cursoradvancedhomework",
+  "name": "y",
   "version": "1.0.0",
   "description": "its homework from study js",
   "main": "somecode.js",
@@ -18,6 +18,6 @@
   "homepage": "https://github.com/KozlovskyiSerhii/KozlovskyiSerhii-CursorAdvancedHomework#readme",
   "keywords": [],
   "dependencies": {
-    "webpack": "^5.79.0"
+    "webpack": "^5.80.0"
   }
 }
