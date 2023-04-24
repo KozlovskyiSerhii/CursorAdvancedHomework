@@ -91,7 +91,7 @@ async function getPlanetsInfo(id) {
   console.log(response);
   $(".cards").append(`
     <div class="person-card">
-      <img src="./img/${id}.jpg" alt="">
+      <img src="./img/0${id}.webp" alt="">
       <p class="info">${response.name}</p>
       <p class="info">Rotation period: ${response.rotation_period}</p>
       <p class="info">${response.climate}</p>
