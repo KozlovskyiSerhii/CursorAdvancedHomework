@@ -85,6 +85,7 @@ color: white;
    width: 690px;
    height: 680px;
    margin-bottom: 50px;
+   justify-content: center;
 }
 .person-card {
    background-color: azure;

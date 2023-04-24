@@ -99,3 +99,15 @@
    console.log(id);
    }
 
+const filmInput = document.getElementById('film-input');
+const filmButton = document.getElementById('film-show');
+
+filmButton.addEventListener('click', async () => {
+  const filmNumber = filmInput.value;
+  if (filmNumber >= 1 && filmNumber <= 6) {
+    clearCards();
+    await getFilmsInfo(filmNumber);
+  } else {
+     alert("number 1 to 6")
+  }
+});
