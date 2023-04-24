@@ -25,6 +25,7 @@ input {
    outline: none;
    border: none;
    font-family: 'Tourney', cursive;
+   margin-right: 20px;
 }
 
 nav {
