@@ -44,7 +44,7 @@ function App() {
       <p className="number">345</p>
    </div>
            <div className="footer-block-info">
-       <img src={like} alt="like" onClick={handleClick} className="footer-img"/>
+              <img src={like} alt="like" onClick={handleClick} className="footer-img"/>
       <p className="number">{count}</p>
    </div>
            <div className="footer-block-info">
