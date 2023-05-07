@@ -1,3 +1,7 @@
+html {
+   margin: 0px 0px 0px 0px;
+   background-color: rgb(230, 146, 19);
+}
 .card-info {
    box-sizing: border-box;
    font-size: 20px;
@@ -12,6 +16,7 @@
    justify-content: space-between;
    letter-spacing: 1px;
    padding: 10px;
+   background-color: rgba(17, 182, 191, 0.8);
 }
 .card-info p {
    display: flex;
@@ -31,7 +36,7 @@
    justify-content: center;
 }
 img {
-   width: 22px;
+   width: 50px;
    margin-left: 5px;
 }
 .user {

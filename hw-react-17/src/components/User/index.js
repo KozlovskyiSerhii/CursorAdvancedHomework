@@ -68,11 +68,12 @@ const User = () => {
       </div>
       <div className='card'>
         {filteredByGenderContacts.map((contact, index) => (
-          <div key={index} className="card-info">
+           <div key={index} className="card-info">
+            <p>{getGenderIcon(contact.gender)}</p>
             <p>Ім'я: {contact.firstName}</p>
             <p>Прізвище: {contact.lastName}</p>
             <p>Телефон: {contact.phone}</p>
-            <p>Стать: {contact.gender}  {getGenderIcon(contact.gender)}</p>
+            <p>Стать: {contact.gender}</p>
           </div>
         ))}
       </div>
