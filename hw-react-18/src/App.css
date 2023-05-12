@@ -1,0 +1,42 @@
+button {
+
+   width: 200px;
+   height: 50px;
+   font-size: 20px;
+   text-align: center;
+   font-weight: normal;
+   font-family: 'Times New Roman', Times, serif;
+   color: chartreuse;
+   background-color: rgb(202, 27, 27);
+   border-radius: 8px;
+   margin-left: 20px;
+}
+
+button:hover {
+   border: 1px solid green;
+   background-color: rgb(253, 253, 248);
+   transform: scale(1.1);
+   color: black;
+}
+
+.timer-box {
+   font-size: 36px;
+   color: gray;
+   font-weight: normal;
+   margin-bottom: 30px;
+   width: 250px;
+}
+
+#root {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.timer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
