@@ -1,5 +1,6 @@
-button {
 
+
+button {
    width: 200px;
    height: 50px;
    font-size: 20px;
@@ -24,7 +25,9 @@ button:hover {
    color: gray;
    font-weight: normal;
    margin-bottom: 30px;
-   width: 250px;
+   width: 350px;
+   align-items: center;
+   text-align: center;
 }
 
 #root {
@@ -32,11 +35,37 @@ button:hover {
    flex-direction: column;
    align-items: center;
    justify-content: center;
+
 }
 
 .timer {
+      margin-top: 40px;
+   row-gap: 40px;
+   width: 700px;
+   height: auto;
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: center;
+   justify-content: space-evenly;
+}
+.hidden {
+   display: none;
+}
+label {
+   margin-left: 20px;
+   font-size: 1.5em;
+   color: rgb(22, 6, 165);
+}
+input {
+   height: 30px;
+   overflow: hidden;
+   margin-left: 5px;
+   width: 140px;
+   outline: none;
+   border: 2px solid black;
+   color: green;
+   font-weight:  700;
+}
+input:focus::placeholder {
+   color: transparent;
 }
