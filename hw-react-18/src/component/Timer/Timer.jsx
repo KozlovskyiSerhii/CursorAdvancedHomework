@@ -15,7 +15,7 @@
 
 handleMinutesChange = (event) => {
    const value = event.target.value;
-   if (value >= 0 && value <= 59) {
+   if (value >= 0 && value <= 99) {
       this.setState({ inputMinutes: value});
    }
 };
@@ -38,9 +38,9 @@ handlePause = () => {
       let { inputMinutes, inputSeconds } = this.state;
       
    if (inputMinutes === '' && inputSeconds === '') {
-      inputMinutes = '59';
+      inputMinutes = '99';
       inputSeconds = '59';
-   }
+   } 
 
    const minutes = parseInt(inputMinutes);
    const seconds = parseInt(inputSeconds);
@@ -51,6 +51,8 @@ handlePause = () => {
       inPause: false,
       showInput: false,
    });
+      
+      
    this.intervalId = setInterval(() => {
       const { minutes, seconds } = this.state;
       if (seconds === 0 && minutes === 0) {
@@ -70,26 +72,31 @@ handlePause = () => {
          inPause : false,
          isRunning: false,
          showInput: true,
-         inputMinutes: '59',
+         inputMinutes: '99',
          inputSeconds: '59',
       });
       clearInterval(this.intervalId);
+      
+      if (this.state.minutes === 0 && this.state.seconds === 0) {
+      this.setState({ showMessage: true });
+    }
    };
    render() {
-      const { minutes, seconds, isRunning ,inPause} = this.state;
+   const { minutes, seconds, isRunning, inPause} = this.state;
    const paddedMinutes = String(minutes).padStart(2, '0');
    const paddedSeconds = String(seconds).padStart(2, '0');
+
       return (
    <div className='timer'>
    <div className='timer-box'>Time: {paddedMinutes}:{paddedSeconds}</div>
    <div className={isRunning || inPause ? 'hidden' : 'input-box'}>
       <label>
          Minutes:
-         <input type="number" min="0" max="59" pattern="^[0-5]?[0-9]$" placeholder='число від 0 до 60' onChange={this.handleMinutesChange} />
+         <input type="number" min="0" max="99" pattern="^[0-9]?[0-9]$" placeholder='Введіть хвилини' onChange={this.handleMinutesChange} />
       </label>
       <label>
          Seconds:
-         <input type="number" min="0" max="59" pattern="^[0-5]?[0-9]$" placeholder='число від 0 до 60' onChange={this.handleSecondsChange} />
+         <input type="number" min="0" max="59" pattern="^[0-5]?[0-9]$" placeholder='Введіть секунди' onChange={this.handleSecondsChange} />
       </label>
    </div>
    <div className=''>
