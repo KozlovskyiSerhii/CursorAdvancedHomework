@@ -1,112 +1,117 @@
-   import React, { Component } from 'react';
+import React, { Component } from 'react';
 
-   class Timer extends Component {
-   constructor(props) {
-      super(props);
-      this.state = {
-         minutes: 0,
-         seconds: 0,
-         isRunning: false,
-         showInput: true,
-         inputMinutes: '',
-         inputSeconds: '',
-      };
-   }
+class Timer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      minutes: 0,
+      seconds: 0,
+      isRunning: false,
+      showInput: true,
+      inputMinutes: '',
+      inputSeconds: '',
+      pauseTime: null, 
+    };
+  }
 
-handleMinutesChange = (event) => {
-   const value = event.target.value;
-   if (value >= 0 && value <= 99) {
-      this.setState({ inputMinutes: value});
-   }
-};
-         
-handleSecondsChange = (event) => {
-   const value = event.target.value;
-   if (value >= 0 && value <= 59) {
-   return  this.setState({ inputSeconds: value });
-   } 
-};
+  handleMinutesChange = (event) => {
+    const value = event.target.value;
+    if (value >= 0 && value <= 99) {
+      this.setState({ inputMinutes: value });
+    }
+  };
 
-      
-handlePause = () => {
-      this.setState({ isRunning: false , inPause : true});
-      clearInterval(this.intervalId);
-   };
+  handleSecondsChange = (event) => {
+    const value = event.target.value;
+    if (value >= 0 && value <= 59) {
+      this.setState({ inputSeconds: value });
+    }
+  };
 
+  handlePause = () => {
+    const { minutes, seconds } = this.state;
+    const currentTime = minutes * 60 + seconds;
+    this.setState({ isRunning: false, pauseTime: currentTime });
+    clearInterval(this.intervalId);
+  };
 
-   handleStart = () => {
-      let { inputMinutes, inputSeconds } = this.state;
-      
-   if (inputMinutes === '' && inputSeconds === '') {
+  handleStart = () => {
+    let { inputMinutes, inputSeconds, pauseTime } = this.state;
+
+    if (inputMinutes === '' && inputSeconds === '') {
       inputMinutes = '99';
       inputSeconds = '59';
-   } 
+    }
 
-   const minutes = parseInt(inputMinutes);
-   const seconds = parseInt(inputSeconds);
-   this.setState({
-      minutes: minutes,
-      seconds: seconds,
+    const minutes = parseInt(inputMinutes);
+    const seconds = parseInt(inputSeconds);
+    let startFrom = minutes * 60 + seconds;
+
+    if (pauseTime !== null) {
+      startFrom = pauseTime; 
+    }
+
+    this.setState({
+      minutes: Math.floor(startFrom / 60),
+      seconds: startFrom % 60,
       isRunning: true,
-      inPause: false,
       showInput: false,
-   });
-      
-      
-   this.intervalId = setInterval(() => {
+      pauseTime: null,
+    });
+
+    this.intervalId = setInterval(() => {
       const { minutes, seconds } = this.state;
       if (seconds === 0 && minutes === 0) {
-         this.handleReset();
+        this.handleReset();
       } else if (seconds === 0) {
-         this.setState({ minutes: minutes - 1, seconds: 59 });
+        this.setState({ minutes: minutes - 1, seconds: 59 });
       } else {
-         this.setState({ seconds: seconds - 1 });
+        this.setState({ seconds: seconds - 1 });
       }
-   }, 1000);
-   };
+    }, 1000);
+  };
 
-   handleReset = () => {
-      this.setState({
-         minutes: 0,
-         seconds: 0,
-         inPause : false,
-         isRunning: false,
-         showInput: true,
-         inputMinutes: '99',
-         inputSeconds: '59',
-      });
-      clearInterval(this.intervalId);
-      
-      if (this.state.minutes === 0 && this.state.seconds === 0) {
-      this.setState({ showMessage: true });
-    }
-   };
-   render() {
-   const { minutes, seconds, isRunning, inPause} = this.state;
-   const paddedMinutes = String(minutes).padStart(2, '0');
-   const paddedSeconds = String(seconds).padStart(2, '0');
+handleReset = () => {
+  this.setState({
+    minutes: 0,
+    seconds: 0,
+    isRunning: false,
+    showInput: true,
+    inputMinutes: '',
+    inputSeconds: '',
+    pauseTime: null,
+  });
+  clearInterval(this.intervalId);
+};
 
-      return (
-   <div className='timer'>
-   <div className='timer-box'>Time: {paddedMinutes}:{paddedSeconds}</div>
-   <div className={isRunning || inPause ? 'hidden' : 'input-box'}>
-      <label>
-         Minutes:
-         <input type="number" min="0" max="99" pattern="^[0-9]?[0-9]$" placeholder='Введіть хвилини' onChange={this.handleMinutesChange} />
-      </label>
-      <label>
-         Seconds:
-         <input type="number" min="0" max="59" pattern="^[0-5]?[0-9]$" placeholder='Введіть секунди' onChange={this.handleSecondsChange} />
-      </label>
-   </div>
-   <div className=''>
-      {!isRunning && <button onClick={this.handleStart}>Start</button>}
-      {isRunning && <button onClick={this.handlePause}>Pause</button>}
-      <button onClick={this.handleReset}>Reset</button>
-   </div>
-   </div>
-      );
-   }
-   }
+  render() {
+    const { minutes, seconds, isRunning, pauseTime } = this.state;
+    const paddedMinutes = String(minutes).padStart(2, '0');
+    const paddedSeconds = String(seconds).padStart(2, '0');
 
-   export default Timer;
+    return (
+      <div className="timer">
+        <div className="timer-box">
+          Time: {paddedMinutes}:{paddedSeconds}
+        </div>
+        <div className={isRunning || pauseTime !== null ? 'hidden' : 'input-box'}>
+          <label>
+            Minutes:
+            <input type="number" min="0" max="99" pattern="^[0-9]?[0-9]$" placeholder="Enter minutes" onChange={this.handleMinutesChange} />
+          </label>
+          <label>
+            Seconds:
+            <input type="number" min="0" max="59" pattern="^[0-5]?[0-9]$" placeholder="Enter seconds" onChange={this.handleSecondsChange} />
+          </label>
+        </div>
+        <div>
+          {!isRunning && <button onClick={this.handleStart}>Start</button>}
+          {isRunning && <button onClick={this.handlePause}>Pause</button>}
+          <button onClick={this.handleReset}>Reset</button>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Timer;
